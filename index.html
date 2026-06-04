@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>City Rush</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#FFD400;
+text-align:center;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+h1{
+font-size:60px;
+margin-top:30px;
+color:#111;
+}
+
+.subtitle{
+font-size:24px;
+margin-bottom:30px;
+}
+
+#letter{
+width:220px;
+height:220px;
+margin:30px auto;
+background:white;
+border-radius:25px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:140px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.25);
+}
+
+button{
+font-size:26px;
+padding:15px 35px;
+border:none;
+border-radius:15px;
+background:black;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.funmigo{
+margin-top:40px;
+font-size:40px;
+font-weight:bold;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:42px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+#letter{
+width:150px;
+height:150px;
+font-size:90px;
+}
+
+button{
+font-size:20px;
+padding:12px 25px;
+}
+
+.funmigo{
+font-size:28px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌍 CITY RUSH</h1>
+
+<div class="subtitle">
+לחצו על הכפתור כדי לקבל אות אקראית
+</div>
+
+<div id="letter">?</div>
+
+<button onclick="generateLetter()">
+הגרל אות
+</button>
+
+<div class="funmigo">
+FUNMIGO 👑
+</div>
+
+</div>
+
+<script>
+
+const letters = [
+'א','ב','ג','ד','ה',
+'ו','ז','ח','ט','י',
+'כ','ל','מ','נ','ס',
+'ע','פ','צ','ק','ר',
+'ש','ת'
+];
+
+function generateLetter(){
+
+const randomLetter =
+letters[Math.floor(Math.random()*letters.length)];
+
+document.getElementById("letter").innerHTML =
+randomLetter;
+
+}
+
+</script>
+
+</body>
+</html>
